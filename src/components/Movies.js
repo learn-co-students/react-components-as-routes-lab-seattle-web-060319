@@ -2,11 +2,22 @@ import React from 'react';
 import { movies } from '../data';
 
 const Movies = () => {
-  return (
-    <div>
-        {/*{code here}*/}
-    </div>
-  );
-};
+
+    return (
+      <div>
+       <h1>Movies Page</h1>
+          {movies.map(movie => {
+            return (
+              <div>
+              {movie.title} at {movie.time} {movie.genres.map(genre => {
+                return <ul>{genre}</ul>
+              })}
+              </div>
+            )}
+        )}
+      </div>
+    )
+}
+
 
 export default Movies;
